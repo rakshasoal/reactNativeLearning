@@ -1,14 +1,19 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 
 function GoalItem(props) {
+    console.log(props.ListItem);
     return (
+        <TouchableOpacity activeOpacity = {0.5} onPress = {()=>props.onDelete(props.id)}>
         <View style={styles.ListItems} >
-            <Text >{props.ListItem}</Text>
+           {
+          <Text >{props.title}</Text>
+}
         </View>
+</TouchableOpacity>
     )
 }
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     ListItems:{
         padding:10,
         backgroundColor:'light',
